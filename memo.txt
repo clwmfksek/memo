@@ -1,0 +1,15 @@
+test	start	1000
+times	ldx		time
+		tix 	seven
+		jgt		ends
+		stx		time
+		lda		seven
+		mul		time
+		ldx		time
+		stch	gugudan,x
+ends	lda		zero
+zero	word	0
+time 	word 	0
+seven	word	9
+gugudan	resw	9
+		end		first
