@@ -1,15 +1,16 @@
-test	start	1000
-times	ldx		time
-		tix 	seven
-		jgt		ends
-		stx		time
-		lda		seven
-		mul		time
-		ldx		time
-		stch	gugudan,x
-ends	lda		zero
-zero	word	0
-time 	word 	0
-seven	word	9
-gugudan	resw	9
-		end		first
+1000        test     start   1000                                             
+1000 00101b first    lda     zero                                             
+1003 041021          ldx     one                                              
+1006 2c103f times    tix     nine                                             
+1009 341018          jgt     ends                                             
+100c 00103f          lda     nine                                             
+100f 20101e          mul     time                                             
+1012 0c9024          sta     gugudan,x                                        
+1015 3c1006          j       times                                            
+1018 00101b ends     lda     zero                                             
+101b 000000 zero     word    0                                                
+101e        time     resw    1                                                
+1021 000001 one      word    1                                                
+1024        gugudan  resw    9                                                
+103f 000009 nine     word    9                                                
+1042                 end     first                                            
