@@ -1,7 +1,10 @@
 TEST    START   1000
 FIRST   LDA     ZERO
         STA     INDEX
-        LDX     ZERO
+        LDA     ZERO
+        MUL     THREE
+        STA     TEMP
+        LDX     TEMP
         LDA     SEVEN
         STA     MULT
 LOOP    LDA     MULT
@@ -10,15 +13,20 @@ LOOP    LDA     MULT
         LDA     INDEX
         ADD     ONE
         STA     INDEX
-        LDX     INDEX
+        LDA     INDEX
+        MUL     THREE
+        STA     TEMP
+        LDX     TEMP
         LDA     COUNT
         COMP    INDEX
         JGT     LOOP
+        END     FIRST
 SEVEN   WORD    7
 ZERO    WORD    0
 ONE     WORD    1
+THREE   WORD    3
 COUNT   WORD    9
 MULT    RESW    1
 INDEX   RESW    1
+TEMP    RESW    1
 GUGUDAN RESW    9
-        END     FIRST
