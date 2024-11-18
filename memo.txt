@@ -2,13 +2,22 @@ test    START   2000
 main    LDA     ZERO
         LDX     ZERO
 loop    LDCH    NUM,X
-        ADD     SUM
+        COMP    aa
+        JLT     isd
+        SUB     aa
+        ADD     TEN
+        J       atos
+isd     SUB     za
+atos    ADD     SUM
         STA     SUM
         TIX     COUNT
         JLT     loop
         J       exit
 zero    WORD    0
 count   WORD    5
+za      WORD    48
+aa      WORD    65
+TEN     WORD    10
 num     BYTE    C'1213F'
 sum     RESW    1
 exit    END     main
