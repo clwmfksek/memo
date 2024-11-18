@@ -6,7 +6,7 @@ loop    LDCH    NUM,X
         STA     SUM
         TIX     COUNT
         JLT     loop
-        STA     SUM
+        J       exit
 zero    WORD    0
 count   WORD    5
 num     BYTE    C'1213F'
